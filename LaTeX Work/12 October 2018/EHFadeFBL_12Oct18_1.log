@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.7.18)  16 OCT 2018 16:34
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6745 64-bit) (preloaded format=pdflatex 2018.7.18)  18 OCT 2018 17:09
 entering extended mode
 **./EHFadeFBL_12Oct18_1.tex
 (EHFadeFBL_12Oct18_1.tex
@@ -546,18 +546,16 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 47.
  ("C:\Users\Smart\AppData\Local\Programs\MiKTeX 2.9\tex\latex\amsfonts\umsb.fd"
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <6> not available
-(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 50.
 Package epstopdf Info: Source file: <../Figures/Schematic_BlockFade_EHTx.eps>
-(epstopdf)                    date: 2018-10-15 15:56:44
+(epstopdf)                    date: 2018-10-18 13:02:36
 (epstopdf)                    size: 68011 bytes
 (epstopdf)             Output file: <../Figures/Schematic_BlockFade_EHTx-eps-co
 nverted-to.pdf>
-(epstopdf)                    date: 2018-10-15 15:57:14
+(epstopdf)                    date: 2018-10-18 13:02:36
 (epstopdf)                    size: 9219 bytes
 (epstopdf)             Command: <epstopdf --outfile=../Figures/Schematic_BlockF
 ade_EHTx-eps-converted-to.pdf ../Figures/Schematic_BlockFade_EHTx.eps>
-(epstopdf)             \includegraphics on input line 75.
+(epstopdf)             \includegraphics on input line 73.
 Package epstopdf Info: Output file is already uptodate.
 <../Figures/Schematic_BlockFade_EHTx-eps-converted-to.pdf, id=1, 399.4925pt x 1
 28.48pt>
@@ -565,20 +563,20 @@ File: ../Figures/Schematic_BlockFade_EHTx-eps-converted-to.pdf Graphic file (ty
 pe pdf)
 <use ../Figures/Schematic_BlockFade_EHTx-eps-converted-to.pdf>
 Package pdftex.def Info: ../Figures/Schematic_BlockFade_EHTx-eps-converted-to.p
-df  used on input line 75.
+df  used on input line 73.
 (pdftex.def)             Requested size: 239.69734pt x 77.08858pt.
  [1{C:/Users/Smart/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}
 
 
  <../Figures/Schematic_BlockFade_EHTx-eps-converted-to.pdf>]
-Underfull \hbox (badness 10000) in paragraph at lines 100--102
+Underfull \hbox (badness 10000) in paragraph at lines 99--101
 \OT1/ptm/m/it/10 where $\OML/cmm/m/it/10 V[] \OT1/cmr/m/n/10 = [] [][](\OML/cmm
 /m/it/10 e\OT1/cmr/m/n/10 )$\OT1/ptm/m/it/10 , $\OML/cmm/m/it/10 K[] \OT1/cmr/m
 /n/10 =
  []
 
 
-Overfull \hbox (7.5261pt too wide) detected at line 107
+Overfull \hbox (7.5261pt too wide) detected at line 106
 [] \OML/cmm/m/it/10 M[]\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 n; "\OT1/cmr/m/n/10 ) 
 \OMS/cmsy/m/n/10  \OML/cmm/m/it/10 nC[] \OT1/cmr/m/n/10 + [][](\OML/cmm/m/it/
 10 "\OT1/cmr/m/n/10 ) + [] [] \OML/cmm/m/it/10 n \OT1/cmr/m/n/10 + \OML/cmm/m/i
@@ -599,11 +597,11 @@ Before submitting the final camera ready copy, remember to:
 
 [2] (EHFadeFBL_12Oct18_1.aux) ) 
 Here is how much of TeX's memory you used:
- 4560 strings out of 492973
- 67517 string characters out of 3126692
- 140921 words of memory out of 3000000
- 8347 multiletter control sequences out of 15000+200000
- 47429 words of font info for 105 fonts, out of 3000000 for 9000
+ 4540 strings out of 492973
+ 67412 string characters out of 3126692
+ 140937 words of memory out of 3000000
+ 8335 multiletter control sequences out of 15000+200000
+ 42701 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  42i,10n,35p,1106b,311s stack positions out of 5000i,500n,10000p,200000b,50000s
 {C:/Users/Smart/AppData/Local/Programs/MiKTeX 2.
@@ -627,7 +625,7 @@ ograms/MiKTeX 2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Users/Smart/AppData/Loca
 l/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmbi8a.pfb><C:/Users/Smart/AppData
 /Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.pfb><C:/Users/Smart/App
 Data/Local/Programs/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
-Output written on EHFadeFBL_12Oct18_1.pdf (2 pages, 191430 bytes).
+Output written on EHFadeFBL_12Oct18_1.pdf (2 pages, 192101 bytes).
 PDF statistics:
  93 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
