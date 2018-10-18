@@ -47,13 +47,11 @@ vinod@IISc.ac.in}
 \maketitle
 
 \begin{abstract}
-This document is a model and instructions for \LaTeX.
-This and the IEEEtran.cls file define the components of your paper [title, text, heads, etc.]. *CRITICAL: Do Not Use Symbols, Special Characters, Footnotes, 
-or Math in Paper Title or Abstract.
+We consider a fading channel with Additive White Gaussian noise with an energy harvesting transmitter. A finite blocklength analysis of the channel capacity is provided. This work combines known results for fading channels and energy harvesting AWGN channels that have been studied recently in the finite blocklength regime.
 \end{abstract}
 
 \begin{IEEEkeywords}
-component, formatting, style, styling, insert
+Fading channel, energy harvesting, finite blocklength, channel capacity
 \end{IEEEkeywords}
 
 \section{Introduction}
@@ -87,10 +85,11 @@ since the buffer cannot be negative. If at any instant the symbol to be transmit
 This scheme consists of two phases, namely the saving phase and the transmission phase. During the saving phase, no symbols are transmitted and the energy buffer is allowed to build up. During the transmission phase, we start transmitting symbols but now, the buffer contains some energy. This initial energy helps to lower, and hence control, the probability of energy outage. The tradeoff here is the number of slots where we don't transmit anything which is, as far as information transfer is concerned, wasted. However by carefully choosing the duration, we can achieve a balance of sorts.
 
 \subsection{Known Results and Useful Lemmas}
-We recall known finite blocklength bounds for energy harvesting AWGN (EH-AWGN) channels \cite{mycon1, Tan1, TanF2} as well as the fading channel with \emph{long term} power constraint \cite{deeks2018, polyf}. 
+We recall known finite blocklength bounds for the fading channel with additive Gaussian noise with \emph{long term} power constraint \cite{deeks2018, polyf}. 
 
+% Please edit this lemma suitably
 \begin{lem}\label{Lem1}
-		Consider a EH-AWGN channel, with AWGN variance $\sigma^2$, with energy harvesting process $\{E_i\}$, i.i.d. at the encoder, with mean $\mathbb{E}[E_1]$ and variance $\sigma_E^2 < \infty$. 
+		Consider a EH-AWGN channel with noise variance $\sigma^2$, channel capacity $C_{EG} = \frac{1}{2}\log \left(1+\frac{\overline{E}}{\sigma^2}\right)$,  with energy harvesting process $\{E_i\}$, i.i.d. at the encoder, with mean $\mathbb{E}[E_1]$ and variance $\sigma_E^2 < \infty$. 
 		\begin{enumerate}
 			\item (Achievable bound) Given maximal probability of error $\varepsilon>0$ and any $0 < \lambda < 1$, for sufficiently large blocklength $n$, the maximum size of the code, $M^*(n,\varepsilon)$, is lower bounded by 
 			\begin{IEEEeqnarray}{rCl}
@@ -108,20 +107,26 @@ We recall known finite blocklength bounds for energy harvesting AWGN (EH-AWGN) c
 			where $V_{EG2} = \frac{\mathbb{E}[E_1]^2 + \mathbb{E}[E_1^2] + 4\sigma^2\mathbb{E}[E_1]}{4(\mathbb{E}[E_1]+\sigma^2)^2}\log_2^2(e)$.
 		\end{enumerate}
 \end{lem}
-To summarize, $\log M^*(n,\varepsilon) = nC + \Theta(\sqrt{n})$. We observe that there are a few changes in the coefficients owing to the use of an energy harvesting system when compared to a standard AWGN channel.
+To summarize, $\log M^*(n,\varepsilon) = nC + \Theta(\sqrt{n})$. Due to energy harvesting, some of the coefficients will get affected but they are restricted to the second order and above terms. This was observed when analyzing the energy harvesting AWGN channel \cite{mycon1, Tan1, TanF2}. 
 
-The following lemma from \cite{mycon1} will aid in tackling the energy harvesting part.
+The following lemma from \cite{mycon1} will aid in tackling the energy harvesting achievability part by decoupling the channel statistics from the energy harvesting analysis.
 
 \begin{lem}\label{ehlem1}
-	Let $\{X_i\}$ be an independent collection of random variables with zero mean and variance $\overline{E}$. Let $E_i$ be i.i.d non negative random variables with mean $\overline{E}$. Consider an energy harvesting system with $E_i$ as arrivals and $X_i$ as input to the system. Let $0<\varepsilon<1$ be the required probability of error for the energy harvesting system. Then the channel $W$ which only depends on the input may be decoupled from the energy harvesting system by 
-	\begin{enumerate}
-		\item discounting the probability of error requirement for the channel alone to $\varepsilon - \varepsilon'$ where 
-			\begin{equation}
-				\varepsilon' = .
-			\end{equation}
-		\item Directly feeding the input to the channel as if there were no energy harvesting system. 
-	\end{enumerate}
+%	Let $\{X_i\}$ be an independent collection of random variables with zero mean and variance $\overline{E}$. Let $E_i$ be i.i.d non negative random variables with mean $\overline{E}$. Consider an energy harvesting system with $E_i$ as arrivals and $X_i$ as input to the system. Let $0<\varepsilon<1$ be the required probability of error for the energy harvesting system. Then the channel $W$ which only depends on the input may be decoupled from the energy harvesting system by 
+%	\begin{enumerate}
+%		\item discounting the probability of error requirement for the channel alone to $\varepsilon - \varepsilon'$ where 
+%			\begin{equation}
+%				\varepsilon' = .
+%			\end{equation}
+%		\item Directly feeding the input to the channel as if there were no energy harvesting system. 
+%	\end{enumerate}
+Consider a channel with an energy harvesting setup. Suppose the input to the energy harvesting channel is generated i.i.d. with zero mean and variance $\overline{E}$ and the energy arrivals are i.i.d. with mean $\overline{E}$ and variance $\sigma_E^2$. Let $0<\varepsilon<1$ be the allowed probability of error for the system. Then, given $0<\lambda<1$, there exists a Save and Transmit scheme, whose saving phase lasts $K_{\varepsilon,\lambda}\sqrt{n}$ samples and transmit phase lasts $n$ samples such that the channel probability of error alone $\varepsilon_{n}$ (non energy harvesting errors) is bounded as
+\begin{equation}
+	\varepsilon_{n} \leq \lambda \varepsilon - \frac{4\sigma_E^2}{K_{\varepsilon,\lambda}\overline{E}^2\sqrt{n}}, \label{ener1}
+\end{equation}
+for $K_{\varepsilon,\lambda}=\sqrt{\frac{4(2\overline{E}^2+\sigma_E^2)}{(1-\lambda)\varepsilon\overline{E}^2}}$.
 \end{lem}
+
 \bibliographystyle{IEEEtran}
 \bibliography{EHFade}
 
