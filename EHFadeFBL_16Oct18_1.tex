@@ -2,7 +2,7 @@
 \IEEEoverridecommandlockouts
 % The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
 \usepackage{cite}
-\usepackage{amsmath,amssymb,amsfonts, amsthm}
+\usepackage{amsmath,amssymb,amsfonts}
 \usepackage{algorithmic}
 \usepackage{graphicx}
 \usepackage{textcomp}
@@ -11,12 +11,7 @@
 \graphicspath{{../Figures/}}
 %\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
 %    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
-\newtheorem{prop}{Proposition}
-\newtheorem{defi}{Definition}
-\newtheorem{theo}{Theorem}
-\newtheorem{lem}{Lemma}
-\newtheorem{clm}{Claim}
-\newtheorem{coro}{Corollary}
+    
 \begin{document}
 
 \title{Finite Blocklength Rates over a Fading Channel with an Energy Harvesting Transmitter\\
@@ -35,7 +30,7 @@ voidship@IISc.ac.in}
 \IEEEauthorblockA{\textit{Dept. of ECE} \\
 \textit{Indian Institute of Science}\\
 Bangalore, India \\
-d(p$||$k)@IISc.ac.in}
+D(P$||$K)@IISc.ac.in}
 \and
 \IEEEauthorblockN{Vinod Sharma}
 \IEEEauthorblockA{\textit{Dept. of ECE} \\
@@ -58,8 +53,6 @@ component, formatting, style, styling, insert
 
 \section{Introduction}
 Finite blocklength analysis for channels with fading under various power control schemes is available in \cite{deeks2018}.
-
-\subsection{Main Contributions}
 \section{Model and Notation}
 Consider a wireless communication system powered by an energy harvesting transmitter, as depicted in Figure \ref{Fig_Schematic}. The energy harvesting system consists of an energy buffer or battery that provides power to transmit symbols. The buffer harvests energy $E_i\geq 0$ at time instant $i$ from the ambient environment. We assume these energy arrivals are independent and identically distributed (i.i.d.) with mean $\overline{E}$ and variance $\sigma_E^2$. Further details on the transmitter are discussed in Section \ref{Txmod}.
 
@@ -83,45 +76,11 @@ The buffer state $A_{[b,k]}$ evolves according to the equation
 \end{equation}
 since the buffer cannot be negative. If at any instant the symbol to be transmitted requires more energy than what is available (including harvested energy), we refer to it as an energy outage event. It is worth observing that if there was sufficient energy to transmit every symbol (for a given input distribution), then it would be equivalent to studying the channel alone for that input. Unfortunately this is an unlikely event for several useful distributions (including capacity achieving distributions) and hence, a suitable transmission scheme or policy is required. Two well known and studied schemes are the Save and Transmit scheme as well as the Best Effort scheme. In this paper, we focus on the former as it is known to provide the optimal second order term (not necessarily the coefficient). 
 
-\subsection{Save and Transmit Scheme}
+\subsection{Save and Transmit scheme}
 This scheme consists of two phases, namely the saving phase and the transmission phase. During the saving phase, no symbols are transmitted and the energy buffer is allowed to build up. During the transmission phase, we start transmitting symbols but now, the buffer contains some energy. This initial energy helps to lower, and hence control, the probability of energy outage. The tradeoff here is the number of slots where we don't transmit anything which is, as far as information transfer is concerned, wasted. However by carefully choosing the duration, we can achieve a balance of sorts.
 
-\subsection{Known Results and Useful Lemmas}
-We recall known finite blocklength bounds for energy harvesting AWGN (EH-AWGN) channels \cite{mycon1, Tan1, TanF2} as well as the fading channel with \emph{long term} power constraint \cite{deeks2018, polyf}. 
+\section{Main Results}
 
-\begin{lem}\label{Lem1}
-		Consider a EH-AWGN channel, with AWGN variance $\sigma^2$, with energy harvesting process $\{E_i\}$, i.i.d. at the encoder, with mean $\mathbb{E}[E_1]$ and variance $\sigma_E^2 < \infty$. 
-		\begin{enumerate}
-			\item (Achievable bound) Given maximal probability of error $\varepsilon>0$ and any $0 < \lambda < 1$, for sufficiently large blocklength $n$, the maximum size of the code, $M^*(n,\varepsilon)$, is lower bounded by 
-			\begin{IEEEeqnarray}{rCl}
-			\log M^*(n, \varepsilon) &\geq& nC_{EG}+ \sqrt{n}\left[\sqrt{V_{EG}}\Phi^{-1}\left(\lambda\varepsilon\right)\right.\notag \\
-			&& \left.-K_{\varepsilon, \lambda}C_{EG}\right]-\frac{1}{2}\log n + O(1),
-			\label{ehawgnclb}
-			\end{IEEEeqnarray}
-			where $V_{EG} = \frac{\mathbb{E}[E_1]}{\mathbb{E}[E_1] + \sigma^2}\log^2_2(e)$, $K_{\varepsilon, \lambda} = \sqrt{\frac{4(2\mathbb{E}[E_1]^2 + \sigma_E^2 )}{(1-\lambda) \varepsilon \mathbb{E}[E_1]^2}}$.
-			
-			\item (Converse Bound) The upper bound on $M^*(n,\varepsilon)$ is given by
-			\begin{equation}
-			\log M^*(n, \varepsilon) \leq nC_{EG} +\sqrt{nV_{EG2}}\Phi^{-1}(\varepsilon) + \frac{1}{2}\log n +O(1)
-			\label{ehawgncub}
-			\end{equation}
-			where $V_{EG2} = \frac{\mathbb{E}[E_1]^2 + \mathbb{E}[E_1^2] + 4\sigma^2\mathbb{E}[E_1]}{4(\mathbb{E}[E_1]+\sigma^2)^2}\log_2^2(e)$.
-		\end{enumerate}
-\end{lem}
-To summarize, $\log M^*(n,\varepsilon) = nC + \Theta(\sqrt{n})$. We observe that there are a few changes in the coefficients owing to the use of an energy harvesting system when compared to a standard AWGN channel.
-
-The following lemma from \cite{mycon1} will aid in tackling the energy harvesting part.
-
-\begin{lem}\label{ehlem1}
-	Let $\{X_i\}$ be an independent collection of random variables with zero mean and variance $\overline{E}$. Let $E_i$ be i.i.d non negative random variables with mean $\overline{E}$. Consider an energy harvesting system with $E_i$ as arrivals and $X_i$ as input to the system. Let $0<\varepsilon<1$ be the required probability of error for the energy harvesting system. Then the channel $W$ which only depends on the input may be decoupled from the energy harvesting system by 
-	\begin{enumerate}
-		\item discounting the probability of error requirement for the channel alone to $\varepsilon - \varepsilon'$ where 
-			\begin{equation}
-				\varepsilon' = .
-			\end{equation}
-		\item Directly feeding the input to the channel as if there were no energy harvesting system. 
-	\end{enumerate}
-\end{lem}
 \bibliographystyle{IEEEtran}
 \bibliography{EHFade}
 
